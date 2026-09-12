@@ -457,27 +457,27 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm text-ash mb-2">Nume companie *</label>
-                  <input type="text" required className="w-full bg-ink/50 border border-gold/10 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="Compania SRL" />
+                  <input type="text" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="Compania SRL" />
                 </div>
                 <div>
                   <label className="block text-sm text-ash mb-2">Persoana de contact *</label>
-                  <input type="text" required className="w-full bg-ink/50 border border-gold/10 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="Numele tău" />
+                  <input type="text" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="Numele tău" />
                 </div>
                 <div>
                   <label className="block text-sm text-ash mb-2">Telefon *</label>
-                  <input type="tel" required className="w-full bg-ink/50 border border-gold/10 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="07xx xxx xxx" />
+                  <input type="tel" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="07xx xxx xxx" />
                 </div>
                 <div>
                   <label className="block text-sm text-ash mb-2">E-mail *</label>
-                  <input type="email" required className="w-full bg-ink/50 border border-gold/10 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="email@companie.ro" />
+                  <input type="email" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="email@companie.ro" />
                 </div>
                 <div>
                   <label className="block text-sm text-ash mb-2">Număr angajați *</label>
-                  <input type="number" required min="1" className="w-full bg-ink/50 border border-gold/10 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="ex: 20" />
+                  <input type="number" required min="1" className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="ex: 20" />
                 </div>
                 <div>
                   <label className="block text-sm text-ash mb-2">Perioada estimată *</label>
-                  <select required className="w-full bg-ink/50 border border-gold/10 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors">
+                  <select required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors">
                     <option value="" className="bg-ink">Selectează...</option>
                     <option value="1luna" className="bg-ink">1 lună</option>
                     <option value="3luni" className="bg-ink">3 luni</option>
@@ -489,7 +489,7 @@ export default function HomePage() {
               </div>
               <div>
                 <label className="block text-sm text-ash mb-2">Detalii suplimentare</label>
-                <textarea rows={4} className="w-full bg-ink/50 border border-gold/10 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors resize-none" placeholder="Cerințe specifice, data estimată de mutare, etc." />
+                <textarea rows={4} className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors resize-none" placeholder="Cerințe specifice, data estimată de mutare, etc." />
               </div>
               <div className="flex items-start gap-2">
                 <input type="checkbox" required id="gdpr-cazare" className="mt-1" />
