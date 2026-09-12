@@ -81,9 +81,9 @@ export default function HomePage() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="text-gold/80 text-xs tracking-[0.3em] uppercase"
+            className="text-ink text-xs tracking-[0.3em] uppercase"
           >
-            Scroll pentru a explora
+            Scroll
           </motion.div>
         </div>
       </section>
