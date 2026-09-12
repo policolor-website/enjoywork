@@ -10,7 +10,7 @@ export interface CazareFeature {
 
 export const cazareStats = [
   { value: "80", label: "Locuri de cazare" },
-  { value: "40", label: "Camere moderne" },
+  { value: "20", label: "Camere moderne" },
   { value: "2026", label: "An construcție" },
   { value: "NOU", label: "Mobilier" },
 ];
@@ -69,7 +69,7 @@ export const cazareProces = [
 ];
 
 export const cazareFAQ = [
-  { q: "Câte persoane pot fi cazate simultan?", a: "Complexul dispune de 80 de locuri de cazare distribuite în 40 de camere moderne, fiecare cu baie proprie." },
+  { q: "Câte persoane pot fi cazate simultan?", a: "Complexul dispune de 80 de locuri de cazare distribuite în 20 de camere moderne, fiecare cu baie proprie." },
   { q: "Există o perioadă minimă de contract?", a: "Da, lucrăm cu contracte de minim o lună, dar oferim condiții mai avantajoase pentru contracte de durată (3, 6 sau 12 luni)." },
   { q: "Se oferă servicii de curățenie?", a: "Da, includem curățenia zonelor comune și, la cerere, servicii de curățenie a camerelor individual." },
   { q: "Cum se face plata?", a: "Plata se efectuează lunar, prin factură. Lucrăm exclusiv cu persoane juridice (companii) care cazează angajați." },

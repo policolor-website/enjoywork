@@ -6,14 +6,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Belsamen Work | Cazare muncitori lângă București",
-  description: "Cazare pentru muncitori în Domnești, Ilfov. Complex construit în 2026, cu 80 de locuri, 40 de camere modern utilate. Ofertă personalizată B2B. Telefon: 0785 598 779.",
+  description: "Cazare pentru muncitori în Domnești, Ilfov. Complex construit în 2026, cu 80 de locuri, 20 de camere modern utilate. Ofertă personalizată B2B. Telefon: 0785 598 779.",
   keywords: [
     "cazare muncitori", "cazare angajati Bucuresti", "cazare Domnesti",
     "complex cazare Ilfov", "cazare B2B", "dormitoare muncitori",
   ],
   openGraph: {
     title: "Belsamen Work | Cazare muncitori Domnești, Ilfov",
-    description: "Complex cu 80 de locuri, 40 de camere modern utilate. Soluție cazare B2B în Domnești, Ilfov.",
+    description: "Complex cu 80 de locuri, 20 de camere modern utilate. Soluție cazare B2B în Domnești, Ilfov.",
     locale: "ro_RO",
     type: "website",
   },

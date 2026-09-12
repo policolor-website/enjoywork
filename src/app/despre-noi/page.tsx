@@ -9,7 +9,7 @@ import { cazareStats } from "@/lib/listings";
 const values = [
   { icon: Target, title: "Misiunea noastră", text: "Să oferim companiilor o soluție completă de relocare a angajaților, cu standarde ridicate de confort, siguranță și eficiență." },
   { icon: Users, title: "Oamenii pe primul loc", text: "Calitatea cazării influențează direct productivitatea. De aceea investim în camere moderne, curate și complet utilate." },
-  { icon: Building2, title: "Infrastructură nouă", text: "Complex construit în 2026, proiectat pentru a găzdui 80 de persoane în 40 de camere, în condiții optime." },
+  { icon: Building2, title: "Infrastructură nouă", text: "Complex construit în 2026, proiectat pentru a găzdui 80 de persoane în 20 de camere, în condiții optime." },
   { icon: Heart, title: "Parteneriat de lungă durată", text: "Lucrăm cu companii care au strategii de fidelizare a forței de muncă. Oferim contracte flexibile și suport administrativ continuu." },
 ];
 
@@ -44,7 +44,7 @@ export default function DespreNoiPage() {
               Belsamen Work oferă soluția de relocare temporară a angajaților, punând la dispoziție un cămin nou, construit în 2026, localizat în Domnești, Ilfov.
             </p>
             <p className="text-ash leading-relaxed">
-              Complexul dispune de 80 de locuri de cazare în 40 de camere modern utilate, cu acces facil la București și la toate facilitățile necesare angajaților tăi.
+              Complexul dispune de 80 de locuri de cazare în 20 de camere modern utilate, cu acces facil la București și la toate facilitățile necesare angajaților tăi.
             </p>
           </motion.div>
 
