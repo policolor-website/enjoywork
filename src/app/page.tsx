@@ -66,7 +66,7 @@ export default function HomePage() {
       {/* then releases and content sections appear below. */}
       {/* ============================================ */}
       <div className="relative" style={{ height: "400vh" }}>
-        <section className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-6 bg-surface">
+        <section className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-6 bg-surface z-0">
           <BuildingHero3D />
         <div ref={heroTextRef} className="relative z-10 pointer-events-none w-full text-center">
           <motion.div
