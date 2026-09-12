@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -37,6 +37,26 @@ const dotareIcons: Record<string, any> = {
 export default function HomePage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
   const [submitted, setSubmitted] = useState(false);
+  const heroTextRef = useRef<HTMLDivElement>(null);
+  const heroScrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const opacity = Math.max(0, 1 - scrollY / 250);
+        if (heroTextRef.current) heroTextRef.current.style.opacity = String(opacity);
+        if (heroScrollRef.current) heroScrollRef.current.style.opacity = String(opacity);
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
     <main>
@@ -48,7 +68,7 @@ export default function HomePage() {
       <div className="relative" style={{ height: "400vh" }}>
         <section className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-6 bg-surface">
           <BuildingHero3D />
-        <div className="relative z-10 pointer-events-none w-full text-center">
+        <div ref={heroTextRef} className="relative z-10 pointer-events-none w-full text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +97,7 @@ export default function HomePage() {
             </div>
           </motion.div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+        <div ref={heroScrollRef} className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
