@@ -41,7 +41,7 @@ export default function DespreNoiPage() {
             className="glass rounded-2xl p-8 mb-16"
           >
             <p className="text-ash leading-relaxed mb-4">
-              Enjoy Residence oferă soluția de relocare temporară a angajaților, punând la dispoziție un cămin nou, construit în 2026, localizat în Domnești, Ilfov.
+              Belsamen Work oferă soluția de relocare temporară a angajaților, punând la dispoziție un cămin nou, construit în 2026, localizat în Domnești, Ilfov.
             </p>
             <p className="text-ash leading-relaxed">
               Complexul dispune de 80 de locuri de cazare în 40 de camere modern utilate, cu acces facil la București și la toate facilitățile necesare angajaților tăi.

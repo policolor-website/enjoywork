@@ -168,7 +168,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Locație Enjoy Residence"
+              title="Locație Belsamen Work"
             />
           </div>
         </div>

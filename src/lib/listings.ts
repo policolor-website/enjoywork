@@ -79,12 +79,9 @@ export const cazareFAQ = [
 
 // Date pentru galeria foto
 export const galerieCazare = [
-  { src: "/enjoyresidence/images/ansamblu-300-virtutii-lacul-morii.jpg", alt: "Fațadă complex cazare" },
-  { src: "/enjoyresidence/images/ansamblu-297-militari-pacii.jpg", alt: "Intrare principală" },
-  { src: "/enjoyresidence/images/ansamblu-292-happy-residence-militari.jpg", alt: "Curte interioară" },
-  { src: "/enjoyresidence/images/ansamblu-293-ghencea-valea-oltului.jpg", alt: "Cameră dublă" },
-  { src: "/enjoyresidence/images/ansamblu-294-ion-mihalache-podul-constanta.jpg", alt: "Cameră cu 4 paturi" },
-  { src: "/enjoyresidence/images/ansamblu-295-drumul-taberei-raul-doamnei.jpg", alt: "Bucătărie comună" },
-  { src: "/enjoyresidence/images/ansamblu-296-p3m-lacul-morii.jpg", alt: "Spălătorie" },
-  { src: "/enjoyresidence/images/ansamblu-298-private-villas-ghencea.jpg", alt: "Zonă comună" },
+  { src: "/belsamen/1.jpg", alt: "Fațadă complex cazare" },
+  { src: "/belsamen/2.jpg", alt: "Intrare principală" },
+  { src: "/belsamen/3.jpg", alt: "Curte interioară" },
+  { src: "/belsamen/4.jpg", alt: "Cameră modernă" },
+  { src: "/belsamen/5.webp", alt: "Facilități comune" },
 ];
