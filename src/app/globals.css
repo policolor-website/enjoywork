@@ -66,6 +66,8 @@
 
 html {
   max-width: 100%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {

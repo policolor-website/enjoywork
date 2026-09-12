@@ -324,9 +324,14 @@ export default function BuildingHero3D() {
     const onScroll = () => {
       const scrollY = window.scrollY;
       scrollProgress = clamp(scrollY / animRange(), 0, 1);
+      // Clamp only when needed, not every frame
+      if (!scrollUnlocked && scrollY > animRange()) {
+        window.scrollTo(0, animRange());
+        scrollProgress = 1.0;
+      }
     };
 
-    // Force-clamp scroll position every frame until unlocked
+    // Force-clamp scroll position only when needed (not every frame)
     const clampScroll = () => {
       if (!scrollUnlocked && window.scrollY > animRange()) {
         window.scrollTo(0, animRange());
@@ -343,7 +348,7 @@ export default function BuildingHero3D() {
       }
     };
 
-    // Block touch scroll past boundary
+    // Block touch scroll past boundary — passive to allow native scroll
     let lastTouchY: number | null = null;
     const onTouchStart = (e: TouchEvent) => {
       lastTouchY = e.touches[0]?.clientY ?? null;
@@ -367,7 +372,7 @@ export default function BuildingHero3D() {
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("touchstart", onTouchStart, { passive: false });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
     window.addEventListener("touchmove", onTouchMove, { passive: false });
     onScroll();
 
@@ -457,7 +462,6 @@ export default function BuildingHero3D() {
     // ============================================
     const animate = () => {
       requestAnimationFrame(animate);
-      clampScroll(); // Force scroll lock every frame
       if (modelLoaded) {
         updateComponents();
         updateCamera();

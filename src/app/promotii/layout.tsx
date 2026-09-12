@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Promoții — Belsamen Work Cazare",
+  title: "Promoții — BLS Homes Cazare",
   description:
     "Beneficiază de oferte speciale pentru cazarea angajaților. Verifică promoțiile active și solicită o ofertă personalizată.",
 };

@@ -74,7 +74,7 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Belsamen Work</span>
+            <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">BLS Homes</span>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-ink mb-6 drop-shadow-2xl">
               Cazare pentru <span className="gold-text">muncitori</span>
             </h1>
