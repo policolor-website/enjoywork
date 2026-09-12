@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, Share2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { brand } from "@/lib/brand";
 
 export default function Footer() {
@@ -10,62 +10,58 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex flex-col leading-none mb-6">
-              <span className="font-display text-2xl font-bold gold-text">{brand.name}</span>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-ash mt-1">{brand.tagline}</span>
+              <span className="font-display text-2xl font-bold text-canvas">{brand.name}</span>
+              <span className="text-[10px] tracking-[0.3em] uppercase text-canvas/60 mt-1">{brand.tagline}</span>
             </div>
-            <p className="text-sm text-ash leading-relaxed mb-6">
+            <p className="text-sm text-canvas/70 leading-relaxed mb-6">
               {brand.description}
             </p>
-            <p className="text-xs text-stone">{brand.legalName} • Partener <a href={brand.partnerUrl} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{brand.partner}</a></p>
           </div>
 
-          {/* Oferte */}
+          {/* Linkuri utile */}
           <div>
-            <h4 className="font-display text-lg text-gold mb-5">Oferte</h4>
+            <h4 className="font-display text-lg text-gold mb-5">Linkuri utile</h4>
             <ul className="space-y-3">
-              <li><Link href="/servicii" className="text-sm text-ash hover:text-gold transition-colors">Vânzări imobiliare</Link></li>
-              <li><Link href="/inchirieri-utilaje" className="text-sm text-ash hover:text-gold transition-colors">Închirieri</Link></li>
-              <li><Link href="/portofoliu" className="text-sm text-ash hover:text-gold transition-colors">Ansambluri rezidențiale</Link></li>
-              <li><Link href="/constructii" className="text-sm text-ash hover:text-gold transition-colors">Construcții</Link></li>
-              <li><Link href="/servicii" className="text-sm text-ash hover:text-gold transition-colors">Apartamente</Link></li>
-              <li><Link href="/servicii" className="text-sm text-ash hover:text-gold transition-colors">Case și vile</Link></li>
-              <li><Link href="/servicii" className="text-sm text-ash hover:text-gold transition-colors">Terenuri</Link></li>
+              <li><Link href="/" className="text-sm text-canvas/70 hover:text-gold transition-colors">Acasă</Link></li>
+              <li><Link href="/despre-noi" className="text-sm text-canvas/70 hover:text-gold transition-colors">Despre noi</Link></li>
+              <li><Link href="/promotii" className="text-sm text-canvas/70 hover:text-gold transition-colors">Promoții</Link></li>
+              <li><Link href="/dotari-facilitati" className="text-sm text-canvas/70 hover:text-gold transition-colors">Dotări & facilități</Link></li>
+              <li><Link href="/galerie-foto" className="text-sm text-canvas/70 hover:text-gold transition-colors">Galerie foto</Link></li>
+              <li><Link href="/contact" className="text-sm text-canvas/70 hover:text-gold transition-colors">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Linkuri */}
+          {/* Servicii */}
           <div>
-            <h4 className="font-display text-lg text-gold mb-5">Linkuri</h4>
+            <h4 className="font-display text-lg text-gold mb-5">Servicii</h4>
             <ul className="space-y-3">
-              <li><Link href="/" className="text-sm text-ash hover:text-gold transition-colors">Acasă</Link></li>
-              <li><Link href="/servicii" className="text-sm text-ash hover:text-gold transition-colors">Vânzări</Link></li>
-              <li><Link href="/inchirieri-utilaje" className="text-sm text-ash hover:text-gold transition-colors">Închirieri</Link></li>
-              <li><Link href="/portofoliu" className="text-sm text-ash hover:text-gold transition-colors">Ansambluri</Link></li>
-              <li><Link href="/constructii" className="text-sm text-ash hover:text-gold transition-colors">Construcții</Link></li>
-              <li><Link href="/despre-noi" className="text-sm text-ash hover:text-gold transition-colors">Despre noi</Link></li>
-              <li><Link href="/contact" className="text-sm text-ash hover:text-gold transition-colors">Contact</Link></li>
+              <li><Link href="/#formular" className="text-sm text-canvas/70 hover:text-gold transition-colors">Solicită ofertă</Link></li>
+              <li><Link href="/dotari-facilitati" className="text-sm text-canvas/70 hover:text-gold transition-colors">Dotări camere</Link></li>
+              <li><Link href="/dotari-facilitati" className="text-sm text-canvas/70 hover:text-gold transition-colors">Facilități complex</Link></li>
+              <li><Link href="/galerie-foto" className="text-sm text-canvas/70 hover:text-gold transition-colors">Galerie foto</Link></li>
+              <li><Link href="/promotii" className="text-sm text-canvas/70 hover:text-gold transition-colors">Promoții active</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-lg text-gold mb-5">Contact</h4>
+            <h4 className="font-display text-lg text-gold mb-5">Unde ne găsești?</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
-                <p className="text-sm text-ash">{brand.address}</p>
+                <p className="text-sm text-canvas/70">{brand.address}</p>
               </div>
               <div className="flex items-start gap-3">
                 <Phone size={16} className="text-gold mt-0.5 shrink-0" />
-                <a href={`tel:${brand.phone.replace(/\s/g, "")}`} className="text-sm text-ash hover:text-gold transition-colors">{brand.phone}</a>
+                <a href={`tel:${brand.phone.replace(/\s/g, "")}`} className="text-sm text-canvas/70 hover:text-gold transition-colors">{brand.phone}</a>
               </div>
               <div className="flex items-start gap-3">
                 <Mail size={16} className="text-gold mt-0.5 shrink-0" />
-                <a href={`mailto:${brand.email}`} className="text-sm text-ash hover:text-gold transition-colors">{brand.email}</a>
+                <a href={`mailto:${brand.email}`} className="text-sm text-canvas/70 hover:text-gold transition-colors">{brand.email}</a>
               </div>
               <div className="flex items-start gap-3">
                 <Clock size={16} className="text-gold mt-0.5 shrink-0" />
-                <p className="text-sm text-ash">{brand.program}</p>
+                <p className="text-sm text-canvas/70">{brand.program}</p>
               </div>
             </div>
           </div>
@@ -73,10 +69,10 @@ export default function Footer() {
 
         <div className="hairline h-px w-full mb-8" />
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-stone">
+          <p className="text-xs text-canvas/50">
             © {new Date().getFullYear()} {brand.name}. Toate drepturile rezervate.
           </p>
-          <p className="text-xs text-stone">{brand.tagline}</p>
+          <p className="text-xs text-canvas/50">{brand.tagline}</p>
         </div>
       </div>
     </footer>

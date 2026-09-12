@@ -20,12 +20,12 @@ export default function BuildingHero3D() {
     scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(
-      55,
+      50,
       window.innerWidth / window.innerHeight,
       0.1,
       2000
     );
-    camera.position.set(0, 20, 80);
+    camera.position.set(0, 15, 100);
     camera.lookAt(0, 10, 0);
 
     const renderer = new THREE.WebGLRenderer({
@@ -38,7 +38,7 @@ export default function BuildingHero3D() {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.0;
+    renderer.toneMappingExposure = 1.2;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.domElement.style.display = "block";
     renderer.domElement.style.width = "100%";
@@ -50,31 +50,40 @@ export default function BuildingHero3D() {
     scene.environment = pmremGenerator.fromScene(roomEnv, 0.04).texture;
 
     // ============================================
-    // Lighting
+    // Lighting — warm interior + sunlight through windows
     // ============================================
-    const keyLight = new THREE.DirectionalLight(0xfff4e0, 2.5);
-    keyLight.position.set(30, 50, 30);
+    const keyLight = new THREE.DirectionalLight(0xfff0e0, 2.0);
+    keyLight.position.set(25, 40, 25);
     keyLight.castShadow = true;
     keyLight.shadow.mapSize.width = 2048;
     keyLight.shadow.mapSize.height = 2048;
     keyLight.shadow.camera.near = 0.5;
     keyLight.shadow.camera.far = 200;
-    keyLight.shadow.camera.left = -60;
-    keyLight.shadow.camera.right = 60;
-    keyLight.shadow.camera.top = 60;
-    keyLight.shadow.camera.bottom = -60;
+    keyLight.shadow.camera.left = -50;
+    keyLight.shadow.camera.right = 50;
+    keyLight.shadow.camera.top = 50;
+    keyLight.shadow.camera.bottom = -50;
     keyLight.shadow.bias = -0.0005;
     scene.add(keyLight);
 
-    const fillLight = new THREE.DirectionalLight(0x88aaff, 0.5);
-    fillLight.position.set(-30, 20, -20);
+    const fillLight = new THREE.DirectionalLight(0xffcc88, 0.6);
+    fillLight.position.set(-25, 15, -15);
     scene.add(fillLight);
 
     const rimLight = new THREE.DirectionalLight(0xffaa66, 0.8);
-    rimLight.position.set(0, 15, -40);
+    rimLight.position.set(0, 10, -30);
     scene.add(rimLight);
 
-    const ambient = new THREE.AmbientLight(0x334455, 0.5);
+    // Warm interior point lights to simulate lamps
+    const lampLight1 = new THREE.PointLight(0xffd9a0, 1.5, 40, 1.5);
+    lampLight1.position.set(15, 12, 0);
+    scene.add(lampLight1);
+
+    const lampLight2 = new THREE.PointLight(0xffcc88, 1.0, 30, 1.5);
+    lampLight2.position.set(-15, 10, -10);
+    scene.add(lampLight2);
+
+    const ambient = new THREE.AmbientLight(0x4a3a2a, 0.4);
     scene.add(ambient);
 
     // ============================================
@@ -85,14 +94,18 @@ export default function BuildingHero3D() {
     const easeInOutCubic = (t: number) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
     // ============================================
-    // Camera keyframes
+    // Camera keyframes — orbit around the living room,
+    // then rise to a top-down reveal of the completed room
+    // Room is ~90 x 60 x 22 units after scaling
     // ============================================
     const CAMERA_KEYFRAMES = [
-      { progress: 0.00, position: [0, 30, 120],   target: [0, 15, 0] },
-      { progress: 0.25, position: [60, 25, 100],  target: [0, 15, 0] },
-      { progress: 0.50, position: [100, 40, 60],  target: [0, 15, 0] },
-      { progress: 0.75, position: [60, 45, -70],  target: [0, 15, 0] },
-      { progress: 1.00, position: [0, 30, 90],    target: [0, 15, 0] },
+      { progress: 0.00, position: [0, 18, 95],    target: [0, 10, 0] },
+      { progress: 0.20, position: [55, 15, 75],   target: [0, 10, 0] },
+      { progress: 0.45, position: [85, 22, 10],   target: [0, 10, 0] },
+      { progress: 0.65, position: [50, 28, -55],  target: [0, 10, 0] },
+      { progress: 0.80, position: [15, 45, -20],  target: [0, 8, 0] },
+      { progress: 0.90, position: [3, 65, 2],     target: [0, 5, 0] },
+      { progress: 1.00, position: [0, 80, 0],    target: [0, 0, 0] },
     ];
 
     // ============================================
@@ -104,6 +117,8 @@ export default function BuildingHero3D() {
     let smoothScrollProgress = 0;
     const clock = new THREE.Clock();
     let modelLoaded = false;
+    let ceilingMesh: THREE.Mesh | null = null;
+    let ceilingMaterials: THREE.Material[] = [];
 
     // ============================================
     // Deterministic per-index pseudo-random (avoids relying on
@@ -167,11 +182,11 @@ export default function BuildingHero3D() {
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
     loader.setDRACOLoader(dracoLoader);
-    console.log("%cLoading sehir.glb (14MB — city model)...", "color: #d4a050;");
+    console.log("%cLoading living-room.glb (83MB — living room model)...", "color: #d4a050;");
     loader.load(
-      "/sehir.glb",
+      "/living-room.glb",
       (gltf) => {
-        console.log("%csehir.glb loaded successfully!", "color: #00ff00; font-weight: bold;");
+        console.log("%cliving-room.glb loaded successfully!", "color: #00ff00; font-weight: bold;");
         buildingModel = gltf.scene;
 
         const box = new THREE.Box3().setFromObject(buildingModel);
@@ -190,7 +205,7 @@ export default function BuildingHero3D() {
           if (child.isMesh) {
             child.castShadow = true;
             child.receiveShadow = true;
-            // Keep original textures (real facade/road/roof materials)
+            // Keep original textures (real furniture/floor/wall materials)
           }
         });
 
@@ -258,8 +273,26 @@ export default function BuildingHero3D() {
           comp.object.rotation.copy(comp.explodedRotation);
         });
 
+        // ============================================
+        // Identify ceiling mesh — fade out for top-down reveal
+        // ============================================
+        buildingModel.traverse((child: any) => {
+          if (child.isMesh && child.name.toLowerCase().includes("celling")) {
+            ceilingMesh = child;
+            if (child.material) {
+              const mats = Array.isArray(child.material) ? child.material : [child.material];
+              mats.forEach((m: THREE.Material) => {
+                m.transparent = true;
+                m.opacity = 1.0;
+                ceilingMaterials.push(m);
+              });
+            }
+            console.log(`%cCeiling identified: ${child.name} (${ceilingMaterials.length} materials)`, "color: #ffaa66;");
+          }
+        });
+
         modelLoaded = true;
-        console.log(`%cBuilding loaded: ${components.length} components`, "color: #d4a050; font-weight: bold;");
+        console.log(`%cLiving room loaded: ${components.length} components`, "color: #d4a050; font-weight: bold;");
 
         // Log bounding box for debugging
         const finalBox = new THREE.Box3().setFromObject(buildingModel);
@@ -271,12 +304,12 @@ export default function BuildingHero3D() {
         if (xhr.lengthComputable) {
           const pct = Math.round((xhr.loaded / xhr.total) * 100);
           if (pct % 25 === 0) {
-            console.log(`%cLoading sehir.glb: ${pct}%`, "color: #d4a050;");
+            console.log(`%cLoading living-room.glb: ${pct}%`, "color: #d4a050;");
           }
         }
       },
       (error) => {
-        console.error("Error loading sehir.glb:", error);
+        console.error("Error loading living-room.glb:", error);
       }
     );
 
@@ -349,7 +382,7 @@ export default function BuildingHero3D() {
       // Unlock scroll only when building is FULLY assembled (all pieces + final rotation)
       if (!scrollUnlocked && smoothScrollProgress >= 0.99) {
         scrollUnlocked = true;
-        console.log("%cBuilding complete — scroll unlocked!", "color: #44ff44; font-weight: bold;");
+        console.log("%cLiving room complete — scroll unlocked!", "color: #44ff44; font-weight: bold;");
       }
 
       components.forEach((comp: any) => {
@@ -397,10 +430,26 @@ export default function BuildingHero3D() {
       const target = new THREE.Vector3().lerpVectors(target1, target2, eased);
 
       const time = clock.getElapsedTime();
-      const orbitAmount = (1 - sp) * 0.3 + 0.05;
+      // Orbit drift fades to zero as camera reaches top-down reveal
+      const orbitAmount = sp > 0.85 ? 0 : (1 - sp) * 0.3 + 0.05;
       camera.position.x += Math.sin(time * 0.12) * orbitAmount;
       camera.position.z += Math.cos(time * 0.10) * orbitAmount;
       camera.lookAt(target);
+
+      // ============================================
+      // Fade out ceiling as camera transitions to top-down (0.75 → 0.90)
+      // ============================================
+      if (ceilingMaterials.length > 0) {
+        const ceilingOpacity = sp < 0.75 ? 1.0
+          : sp > 0.90 ? 0.0
+          : 1.0 - ((sp - 0.75) / 0.15);
+        ceilingMaterials.forEach((m: any) => { m.opacity = ceilingOpacity; });
+        if (ceilingMesh && sp > 0.90) {
+          (ceilingMesh as any).visible = false;
+        } else if (ceilingMesh) {
+          (ceilingMesh as any).visible = true;
+        }
+      }
     }
 
     // ============================================

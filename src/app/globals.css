@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0D0D0D;
-  --color-canvas: #141414;
-  --color-surface: #1A1A1A;
+  --color-ink: #1a2332;
+  --color-canvas: #faf8f3;
+  --color-surface: #f5f1e8;
   --color-wine: #722F37;
   --color-wine-light: #9B4446;
-  --color-gold: #FF6B00;
-  --color-gold-light: #FF8533;
-  --color-gold-pale: #FFAA66;
-  --color-cream: #F5F5F5;
-  --color-bone: #E8E8E8;
-  --color-ash: #A0A0A0;
-  --color-stone: #707070;
+  --color-gold: #c9a961;
+  --color-gold-light: #d4b876;
+  --color-gold-pale: #e0cd92;
+  --color-cream: #1a2332;
+  --color-bone: #2a3548;
+  --color-ash: #5a6578;
+  --color-stone: #8a95a8;
   --color-basil: #3D5A3D;
   --color-basil-light: #5B8A5B;
 
@@ -66,36 +66,34 @@
 
 html {
   max-width: 100%;
-  overflow-x: clip;
 }
 
 body {
-  background: var(--color-ink);
+  background: var(--color-canvas);
   color: var(--color-cream);
   font-family: var(--font-body);
   max-width: 100%;
-  overflow-x: clip;
 }
 
 .glass {
-  background: rgba(26, 26, 26, 0.6);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 107, 0, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 169, 97, 0.25);
+  box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
 }
 
 .glass:hover {
-  border-color: rgba(255, 107, 0, 0.35);
-  box-shadow: 0 8px 40px rgba(255, 107, 0, 0.08);
+  border-color: rgba(201, 169, 97, 0.5);
+  box-shadow: 0 8px 40px rgba(201, 169, 97, 0.12);
 }
 
 .glass-light {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 107, 0, 0.2);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  box-shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
 }
 
 .gold-text {
