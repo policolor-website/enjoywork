@@ -329,6 +329,13 @@ export default function BuildingHero3D() {
         window.scrollTo(0, animRange());
         scrollProgress = 1.0;
       }
+      // Remove scroll-blocking listeners once hero is complete
+      if (scrollUnlocked && scrollY > animRange() + 100) {
+        window.removeEventListener("wheel", onWheel);
+        window.removeEventListener("touchmove", onTouchMove);
+        window.removeEventListener("touchstart", onTouchStart);
+        window.removeEventListener("scroll", onScroll);
+      }
     };
 
     // Force-clamp scroll position only when needed (not every frame)
@@ -458,13 +465,23 @@ export default function BuildingHero3D() {
     }
 
     // ============================================
-    // Animation loop
+    // Animation loop — stops when hero is complete to free CPU/GPU
     // ============================================
+    let animId = 0;
+    let heroComplete = false;
     const animate = () => {
-      requestAnimationFrame(animate);
+      animId = requestAnimationFrame(animate);
       if (modelLoaded) {
         updateComponents();
         updateCamera();
+        // Stop rendering once hero is fully assembled and user scrolled past
+        if (!heroComplete && scrollUnlocked && smoothScrollProgress >= 0.999) {
+          heroComplete = true;
+          // Final render then stop the loop
+          renderer.render(scene, camera);
+          cancelAnimationFrame(animId);
+          return;
+        }
       }
       renderer.render(scene, camera);
     };
@@ -488,6 +505,7 @@ export default function BuildingHero3D() {
     // Cleanup
     // ============================================
     return () => {
+      cancelAnimationFrame(animId);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
