@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Phone3D from "@/components/phone-3d";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <Phone3D />
       </body>
     </html>
   );
