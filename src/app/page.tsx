@@ -245,6 +245,94 @@ export default function HomePage() {
       </section>
 
       {/* ============================================ */}
+      {/* DETALII LOCAȚIE */}
+      {/* ============================================ */}
+      <section className="py-24 px-6 bg-section-gradient">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+            className="text-center mb-16"
+          >
+            <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Ne găsești aici</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient">Detalii locație</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Stânga: adresa + telefon */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+              className="glass rounded-2xl p-8 flex flex-col justify-center"
+            >
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                  <MapPin size={24} className="text-gold" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white mb-2">Adresă</h3>
+                  <p className="text-sm text-white/70 leading-relaxed">{brand.address}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                  <Phone size={24} className="text-gold" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white mb-2">Telefon</h3>
+                  <a href={`tel:${brand.phone.replace(/\s/g, "")}`} className="text-sm text-white/70 hover:text-gold transition-colors">{brand.phone}</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                  <Mail size={24} className="text-gold" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white mb-2">E-mail</h3>
+                  <a href={`mailto:${brand.email}`} className="text-sm text-white/70 hover:text-gold transition-colors">{brand.email}</a>
+                </div>
+              </div>
+
+              <a
+                href="https://www.google.ro/maps/dir//Domnesti,+Ilfov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-8 text-gold hover:gap-3 transition-all"
+              >
+                Cum ajungi? <ArrowRight size={16} />
+              </a>
+            </motion.div>
+
+            {/* Dreapta: harta */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+              className="glass rounded-2xl overflow-hidden h-[400px]"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28531.786!2d25.846!3d44.398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1fe5!2sDomnești%2C%20Ilfov!5e0!3m2!1sro!2sro!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Locație BLS HOMES — Domnești, Ilfov"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* PROCES PAS CU PAS */}
       {/* ============================================ */}
       <section className="py-24 px-6 bg-section-gradient">

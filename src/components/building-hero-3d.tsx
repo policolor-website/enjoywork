@@ -462,23 +462,43 @@ export default function BuildingHero3D() {
     }
 
     // ============================================
-    // Animation loop — keeps running to support scroll-back reverse
+    // Animation loop — pauses when scrolled past hero, resumes on scroll-back
     // ============================================
     let animId = 0;
     let heroComplete = false;
+    let isPaused = false;
     const animate = () => {
       animId = requestAnimationFrame(animate);
-      if (modelLoaded) {
-        updateComponents();
-        updateCamera();
-        // Mark hero complete but DON'T stop the loop — scroll-back needs animation
-        if (!heroComplete && scrollUnlocked && smoothScrollProgress >= 0.999) {
-          heroComplete = true;
+      if (!modelLoaded) return;
+
+      // Check if user is within or near hero viewport
+      const scrollY = window.scrollY;
+      const heroBottom = heroHeight();
+      const inHeroRange = scrollY < heroBottom + 200;
+
+      if (!inHeroRange && scrollUnlocked && smoothScrollProgress >= 0.999) {
+        // Paused: user scrolled past hero, animation complete — skip render to free CPU/GPU
+        if (!isPaused) {
+          isPaused = true;
+          renderer.render(scene, camera); // final frame
         }
-        // Reset heroComplete when scrolling back so animation resumes fully
-        if (heroComplete && smoothScrollProgress < 0.95) {
-          heroComplete = false;
-        }
+        return;
+      }
+
+      // Resume rendering when scrolling back into hero range
+      if (isPaused && inHeroRange) {
+        isPaused = false;
+      }
+
+      if (isPaused) return;
+
+      updateComponents();
+      updateCamera();
+      if (!heroComplete && scrollUnlocked && smoothScrollProgress >= 0.999) {
+        heroComplete = true;
+      }
+      if (heroComplete && smoothScrollProgress < 0.95) {
+        heroComplete = false;
       }
       renderer.render(scene, camera);
     };
