@@ -329,10 +329,7 @@ export default function BuildingHero3D() {
         window.scrollTo(0, animRange());
         scrollProgress = 1.0;
       }
-      // Reset unlock when scrolling back into hero
-      if (scrollUnlocked && scrollY < animRange() - 50) {
-        scrollUnlocked = false;
-      }
+      // Once unlocked, stay unlocked — don't re-lock on scroll back
     };
 
     // Force-clamp scroll position only when needed (not every frame)
