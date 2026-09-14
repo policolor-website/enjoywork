@@ -31,7 +31,6 @@ const dotareIcons: Record<string, any> = {
   "Frigider mare cu congelator": Refrigerator,
   "Lenjerie completă (pernă + pilotă)": BedDouble,
   "Aer condiționat": Snowflake,
-  "Plasă de țânțari la ferestre": ShieldCheck,
 };
 
 export default function HomePage() {

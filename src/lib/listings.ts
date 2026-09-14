@@ -24,7 +24,7 @@ export const cazareBeneficii: CazareFeature[] = [
   {
     icon: "bed",
     title: "Camere complet mobilate",
-    text: "Camere cu 2, 3 sau 4 paturi, mobilier nou, televizor, conexiune internet de mare viteză, aer condiționat, frigider cu congelator, baie privată, dulap și plasă de țânțari.",
+    text: "Camere cu 2, 3 sau 4 paturi, mobilier nou, televizor, conexiune internet de mare viteză, aer condiționat, frigider cu congelator, baie privată, dulap.",
   },
   {
     icon: "tag",
@@ -47,7 +47,6 @@ export const cazareDotari = [
   "Frigider mare cu congelator",
   "Lenjerie completă (pernă + pilotă)",
   "Aer condiționat",
-  "Plasă de țânțari la ferestre",
 ];
 
 export const cazareFacilitati = [
