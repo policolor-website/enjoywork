@@ -17,10 +17,10 @@ export default function GalerieFotoPage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Imagini complex</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-ink mb-4">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
               Galerie <span className="gold-text">foto</span>
             </h1>
-            <p className="text-lg text-ash max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
               Imagini ale unității noastre de cazare — camere, zone comune și facilități.
             </p>
           </motion.div>
@@ -43,7 +43,7 @@ export default function GalerieFotoPage() {
                   />
                 </div>
                 <div className="p-4">
-                  <p className="text-sm text-ash">{img.alt}</p>
+                  <p className="text-sm text-white/70">{img.alt}</p>
                 </div>
               </motion.div>
             ))}
@@ -52,7 +52,7 @@ export default function GalerieFotoPage() {
           <div className="text-center mt-16">
             <Link
               href="/#formular"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-ink font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
             >
               Solicită ofertă <ArrowRight size={18} />
             </Link>

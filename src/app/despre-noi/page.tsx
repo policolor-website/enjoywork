@@ -25,10 +25,10 @@ export default function DespreNoiPage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Despre noi</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-ink mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
               Câteva cuvinte pentru a ne <span className="gold-text">cunoaște</span>
             </h1>
-            <p className="text-lg text-ash leading-relaxed">
+            <p className="text-lg text-white/70 leading-relaxed">
               Criza forței de muncă din România ne-a convins că oamenii sunt cea mai importantă resursă a companiilor. De aceea am construit un spațiu de cazare modern pentru angajații veniți de peste hotare, dar și din țară, oferind camere spațioase, complet utilate, care asigură un nivel ridicat de confort.
             </p>
           </motion.div>
@@ -40,10 +40,10 @@ export default function DespreNoiPage() {
             transition={{ duration: 0.6 }}
             className="glass rounded-2xl p-8 mb-16"
           >
-            <p className="text-ash leading-relaxed mb-4">
+            <p className="text-white/70 leading-relaxed mb-4">
               BLS HOMES oferă soluția de relocare temporară a angajaților, punând la dispoziție un cămin nou, construit în 2026, localizat în Domnești, Ilfov.
             </p>
-            <p className="text-ash leading-relaxed">
+            <p className="text-white/70 leading-relaxed">
               Complexul dispune de 80 de locuri de cazare în 20 de camere modern utilate, cu acces facil la București și la toate facilitățile necesare angajaților tăi.
             </p>
           </motion.div>
@@ -59,7 +59,7 @@ export default function DespreNoiPage() {
                 className="text-center"
               >
                 <p className="font-display text-4xl font-bold gold-text mb-2">{stat.value}</p>
-                <p className="text-xs text-ash tracking-wide uppercase">{stat.label}</p>
+                <p className="text-xs text-white/70 tracking-wide uppercase">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -79,8 +79,8 @@ export default function DespreNoiPage() {
                   <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-4">
                     <Icon size={20} className="text-gold" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-ink mb-3">{v.title}</h3>
-                  <p className="text-sm text-ash leading-relaxed">{v.text}</p>
+                  <h3 className="font-display text-lg font-bold text-white mb-3">{v.title}</h3>
+                  <p className="text-sm text-white/70 leading-relaxed">{v.text}</p>
                 </motion.div>
               );
             })}
@@ -89,7 +89,7 @@ export default function DespreNoiPage() {
           <div className="text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-ink font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
             >
               Contactează-ne <ArrowRight size={18} />
             </Link>

@@ -498,12 +498,12 @@ export default function HomePage() {
                 <div>
                   <label className="block text-sm text-white/70 mb-2">Perioada estimată *</label>
                   <select required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-white focus:border-gold/40 focus:outline-none transition-colors">
-                    <option value="" className="bg-ink">Selectează...</option>
-                    <option value="1luna" className="bg-ink">1 lună</option>
-                    <option value="3luni" className="bg-ink">3 luni</option>
-                    <option value="6luni" className="bg-ink">6 luni</option>
-                    <option value="12luni" className="bg-ink">12 luni</option>
-                    <option value="nedeterminat" className="bg-ink">Nedeterminată</option>
+                    <option value="" className="bg-section-gradient">Selectează...</option>
+                    <option value="1luna" className="bg-section-gradient">1 lună</option>
+                    <option value="3luni" className="bg-section-gradient">3 luni</option>
+                    <option value="6luni" className="bg-section-gradient">6 luni</option>
+                    <option value="12luni" className="bg-section-gradient">12 luni</option>
+                    <option value="nedeterminat" className="bg-section-gradient">Nedeterminată</option>
                   </select>
                 </div>
               </div>

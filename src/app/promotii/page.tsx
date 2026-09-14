@@ -16,10 +16,10 @@ export default function PromotiiPage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Oferte speciale</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-ink mb-4">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
               <span className="gold-text">Promoții</span>
             </h1>
-            <p className="text-lg text-ash">
+            <p className="text-lg text-white/70">
               Beneficiază de prețurile noastre speciale pentru contracte de durată.
             </p>
           </motion.div>
@@ -34,15 +34,15 @@ export default function PromotiiPage() {
             <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
               <Sparkles size={24} className="text-gold" />
             </div>
-            <h2 className="font-display text-2xl text-ink mb-4">
+            <h2 className="font-display text-2xl text-white mb-4">
               Momentan nu avem promoții active
             </h2>
-            <p className="text-ash mb-8">
+            <p className="text-white/70 mb-8">
               Dar ne poți solicita o ofertă personalizată, adaptată numărului de angajați și perioadei de cazare.
             </p>
             <Link
               href="/#formular"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-ink font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
             >
               Solicită ofertă <ArrowRight size={18} />
             </Link>

@@ -31,7 +31,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
       </head>
-      <body className="min-h-full flex flex-col bg-canvas text-ink font-body relative">
+      <body className="min-h-full flex flex-col bg-section-gradient text-white font-body relative">
         <Header />
         <div className="relative z-10 flex flex-col flex-1">
           {children}

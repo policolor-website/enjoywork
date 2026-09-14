@@ -45,10 +45,10 @@ export default function DotariFacilitatiPage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Echipare completă</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-ink mb-4">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
               Dotări și <span className="gold-text">facilități</span>
             </h1>
-            <p className="text-lg text-ash max-w-2xl mx-auto">
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
               Tot ce este necesar pentru un confort optim al angajaților tăi, atât în cameră, cât și în zonele comune.
             </p>
           </motion.div>
@@ -65,7 +65,7 @@ export default function DotariFacilitatiPage() {
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
                   <BedDouble size={24} className="text-gold" />
                 </div>
-                <h2 className="font-display text-2xl font-bold text-ink">Dotări camere</h2>
+                <h2 className="font-display text-2xl font-bold text-white">Dotări camere</h2>
               </div>
               <div className="space-y-4">
                 {cazareDotari.map((d, i) => {
@@ -76,7 +76,7 @@ export default function DotariFacilitatiPage() {
                         <Icon size={18} className="text-gold" />
                       </div>
                       <div className="pt-2">
-                        <p className="text-sm text-ink">{d}</p>
+                        <p className="text-sm text-white">{d}</p>
                       </div>
                     </div>
                   );
@@ -95,7 +95,7 @@ export default function DotariFacilitatiPage() {
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
                   <Building2 size={24} className="text-gold" />
                 </div>
-                <h2 className="font-display text-2xl font-bold text-ink">Facilități complex</h2>
+                <h2 className="font-display text-2xl font-bold text-white">Facilități complex</h2>
               </div>
               <div className="space-y-4">
                 {cazareFacilitati.map((f, i) => {
@@ -106,7 +106,7 @@ export default function DotariFacilitatiPage() {
                         <Icon size={18} className="text-gold" />
                       </div>
                       <div className="pt-2">
-                        <p className="text-sm text-ink">{f}</p>
+                        <p className="text-sm text-white">{f}</p>
                       </div>
                     </div>
                   );
@@ -118,7 +118,7 @@ export default function DotariFacilitatiPage() {
           <div className="text-center">
             <Link
               href="/#formular"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-ink font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
             >
               Solicită ofertă <ArrowRight size={18} />
             </Link>
