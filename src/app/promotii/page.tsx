@@ -7,7 +7,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 export default function PromotiiPage() {
   return (
     <main className="pt-20">
-      <section className="py-20 px-6 bg-canvas">
+      <section className="py-20 px-6 bg-section-gradient">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -40 }}

@@ -66,7 +66,7 @@ export default function HomePage() {
       {/* then releases and content sections appear below. */}
       {/* ============================================ */}
       <div className="relative" style={{ height: "400vh" }}>
-        <section className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-6 bg-surface z-0">
+        <section className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-6 bg-hero-gradient z-0">
           <BuildingHero3D />
         <div ref={heroTextRef} className="relative z-10 pointer-events-none w-full text-center">
           <motion.div
@@ -74,23 +74,23 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">BLS Homes</span>
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-ink mb-6 drop-shadow-2xl">
+            <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">BLS HOMES</span>
+            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 drop-shadow-2xl title-gradient">
               Cazare pentru <span className="gold-text">muncitori</span>
             </h1>
-            <p className="text-lg text-ink/80 max-w-2xl mx-auto mb-8 drop-shadow-lg">
+            <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8 drop-shadow-lg">
               Complex nou, construit în 2026, în Domnești, Ilfov. 80 de locuri de cazare în camere modern utilate.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto">
               <a
                 href="#formular"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-ink font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
               >
                 Solicită ofertă <ArrowRight size={18} />
               </a>
               <a
                 href={`tel:${brand.phone.replace(/\s/g, "")}`}
-                className="inline-flex items-center gap-2 px-8 py-4 glass text-ink font-semibold rounded-lg hover:border-gold/50 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 glass text-white font-semibold rounded-lg hover:border-gold/50 transition-all duration-300"
               >
                 <Phone size={16} /> {brand.phone}
               </a>
@@ -101,7 +101,7 @@ export default function HomePage() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="text-ink text-xs tracking-[0.3em] uppercase"
+            className="text-white text-xs tracking-[0.3em] uppercase"
           >
             Scroll
           </motion.div>
@@ -112,7 +112,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* STATISTICI */}
       {/* ============================================ */}
-      <section className="py-20 px-6 bg-canvas">
+      <section className="py-20 px-6 bg-section-gradient">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {cazareStats.map((stat, i) => (
@@ -125,7 +125,7 @@ export default function HomePage() {
                 className="text-center"
               >
                 <p className="font-display text-4xl md:text-5xl font-bold gold-text mb-2">{stat.value}</p>
-                <p className="text-xs text-ash tracking-wide uppercase">{stat.label}</p>
+                <p className="text-xs text-white/70 tracking-wide uppercase">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -135,7 +135,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* BENEFICII */}
       {/* ============================================ */}
-      <section className="py-24 px-6 bg-surface">
+      <section className="py-24 px-6 bg-section-gradient">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -40 }}
@@ -145,7 +145,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">De ce să ne alegi</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-ink">Avantajele cazării noastre</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient">Avantajele cazării noastre</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -164,10 +164,10 @@ export default function HomePage() {
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
                       <Icon size={20} className="text-gold" />
                     </div>
-                    <span className="font-display text-2xl font-bold text-stone">0{i + 1}</span>
+                    <span className="font-display text-2xl font-bold text-white/70">0{i + 1}</span>
                   </div>
-                  <h3 className="font-display text-lg font-bold text-ink mb-3">{b.title}</h3>
-                  <p className="text-xs text-ash leading-relaxed">{b.text}</p>
+                  <h3 className="font-display text-lg font-bold text-white mb-3">{b.title}</h3>
+                  <p className="text-xs text-white/70 leading-relaxed">{b.text}</p>
                 </motion.div>
               );
             })}
@@ -178,7 +178,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* DOTĂRI + FACILITĂȚI */}
       {/* ============================================ */}
-      <section className="py-24 px-6 bg-canvas">
+      <section className="py-24 px-6 bg-section-gradient">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -40 }}
@@ -188,7 +188,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Echipare completă</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-ink">Dotări și facilități</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient">Dotări și facilități</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -203,13 +203,13 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
                   <BedDouble size={24} className="text-gold" />
                 </div>
-                <h3 className="font-display text-2xl font-bold text-ink">Dotări camere</h3>
+                <h3 className="font-display text-2xl font-bold text-white">Dotări camere</h3>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {cazareDotari.map((d, i) => {
                   const Icon = dotareIcons[d] || Check;
                   return (
-                    <div key={i} className="flex items-start gap-2 text-sm text-ash">
+                    <div key={i} className="flex items-start gap-2 text-sm text-white/70">
                       <Icon size={16} className="text-gold mt-0.5 shrink-0" />
                       <span>{d}</span>
                     </div>
@@ -229,11 +229,11 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
                   <Building2 size={24} className="text-gold" />
                 </div>
-                <h3 className="font-display text-2xl font-bold text-ink">Facilități complex</h3>
+                <h3 className="font-display text-2xl font-bold text-white">Facilități complex</h3>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {cazareFacilitati.map((f, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-ash">
+                  <div key={i} className="flex items-start gap-2 text-sm text-white/70">
                     <Check size={16} className="text-gold mt-0.5 shrink-0" />
                     <span>{f}</span>
                   </div>
@@ -247,7 +247,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* PROCES PAS CU PAS */}
       {/* ============================================ */}
-      <section className="py-24 px-6 bg-surface">
+      <section className="py-24 px-6 bg-section-gradient">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -40 }}
@@ -257,7 +257,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">De la cerere la cazare</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-ink">Cum funcționează</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient">Cum funcționează</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -274,8 +274,8 @@ export default function HomePage() {
                   <span className="font-display text-3xl font-bold gold-text">{step.num}</span>
                   <div className="h-px flex-1 bg-gold/20" />
                 </div>
-                <h3 className="font-display text-lg font-bold text-ink mb-3">{step.title}</h3>
-                <p className="text-xs text-ash leading-relaxed">{step.text}</p>
+                <h3 className="font-display text-lg font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-xs text-white/70 leading-relaxed">{step.text}</p>
               </motion.div>
             ))}
           </div>
@@ -285,7 +285,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* GALERIE */}
       {/* ============================================ */}
-      <section className="py-24 px-6 bg-canvas">
+      <section className="py-24 px-6 bg-section-gradient">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -40 }}
@@ -295,7 +295,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Imagini complex</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-ink">Galerie foto</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient">Galerie foto</h2>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -331,7 +331,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* LOCATIE */}
       {/* ============================================ */}
-      <section className="py-24 px-6 bg-surface">
+      <section className="py-24 px-6 bg-section-gradient">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -341,10 +341,10 @@ export default function HomePage() {
               transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
             >
               <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Locație strategică</span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-ink mb-6 leading-tight">
+              <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient mb-6 leading-tight">
                 Domnești, Ilfov — <span className="gold-text">acces facil</span> la București
               </h2>
-              <p className="text-lg text-ash leading-relaxed mb-6">
+              <p className="text-lg text-white/70 leading-relaxed mb-6">
                 Complexul se află în Domnești, Ilfov — cu acces direct la transport public și legături rapide către București.
               </p>
               <ul className="grid grid-cols-2 gap-3 mb-8">
@@ -352,7 +352,7 @@ export default function HomePage() {
                   "Transport public — 5 min", "Acces auto București — 15 min",
                   "Magazine locale — 5 min", "Stație benzină — 3 min",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-ash">
+                  <li key={i} className="flex items-center gap-2 text-sm text-white/70">
                     <MapPin size={14} className="text-gold shrink-0" /> {item}
                   </li>
                 ))}
@@ -387,7 +387,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* FAQ */}
       {/* ============================================ */}
-      <section className="py-24 px-6 bg-canvas">
+      <section className="py-24 px-6 bg-section-gradient">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -40 }}
@@ -397,7 +397,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Întrebări frecvente</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-ink">FAQ</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient">FAQ</h2>
           </motion.div>
 
           <div className="space-y-4">
@@ -414,7 +414,7 @@ export default function HomePage() {
                   onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
                   className="w-full flex items-center justify-between gap-4 p-6 text-left"
                 >
-                  <h3 className="font-display text-base font-bold text-ink">{faq.q}</h3>
+                  <h3 className="font-display text-base font-bold text-white">{faq.q}</h3>
                   {openFAQ === i ? (
                     <ChevronUp size={20} className="text-gold shrink-0" />
                   ) : (
@@ -422,7 +422,7 @@ export default function HomePage() {
                   )}
                 </button>
                 {openFAQ === i && (
-                  <div className="px-6 pb-6 text-sm text-ash leading-relaxed">
+                  <div className="px-6 pb-6 text-sm text-white/70 leading-relaxed">
                     {faq.a}
                   </div>
                 )}
@@ -435,7 +435,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* FORMULAR OFERTĂ */}
       {/* ============================================ */}
-      <section id="formular" className="py-24 px-6 bg-surface">
+      <section id="formular" className="py-24 px-6 bg-section-gradient">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -40 }}
@@ -445,10 +445,10 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Ofertă personalizată</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-ink mb-4">
+            <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient mb-4">
               Solicită <span className="gold-text">ofertă</span>
             </h2>
-            <p className="text-lg text-ash">
+            <p className="text-lg text-white/70">
               Completează formularul și primești o propunere adaptată nevoilor companiei tale în 24 de ore.
             </p>
           </motion.div>
@@ -462,8 +462,8 @@ export default function HomePage() {
               <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
                 <Send size={24} className="text-gold" />
               </div>
-              <h3 className="font-display text-xl text-ink mb-2">Cererea a fost trimisă!</h3>
-              <p className="text-ash">Te contactăm în cel mai scurt timp cu oferta personalizată.</p>
+              <h3 className="font-display text-xl text-white mb-2">Cererea a fost trimisă!</h3>
+              <p className="text-white/70">Te contactăm în cel mai scurt timp cu oferta personalizată.</p>
             </motion.div>
           ) : (
             <motion.form
@@ -476,28 +476,28 @@ export default function HomePage() {
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm text-ash mb-2">Nume companie *</label>
-                  <input type="text" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="Compania SRL" />
+                  <label className="block text-sm text-white/70 mb-2">Nume companie *</label>
+                  <input type="text" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-white focus:border-gold/40 focus:outline-none transition-colors" placeholder="Compania SRL" />
                 </div>
                 <div>
-                  <label className="block text-sm text-ash mb-2">Persoana de contact *</label>
-                  <input type="text" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="Numele tău" />
+                  <label className="block text-sm text-white/70 mb-2">Persoana de contact *</label>
+                  <input type="text" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-white focus:border-gold/40 focus:outline-none transition-colors" placeholder="Numele tău" />
                 </div>
                 <div>
-                  <label className="block text-sm text-ash mb-2">Telefon *</label>
-                  <input type="tel" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="07xx xxx xxx" />
+                  <label className="block text-sm text-white/70 mb-2">Telefon *</label>
+                  <input type="tel" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-white focus:border-gold/40 focus:outline-none transition-colors" placeholder="07xx xxx xxx" />
                 </div>
                 <div>
-                  <label className="block text-sm text-ash mb-2">E-mail *</label>
-                  <input type="email" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="email@companie.ro" />
+                  <label className="block text-sm text-white/70 mb-2">E-mail *</label>
+                  <input type="email" required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-white focus:border-gold/40 focus:outline-none transition-colors" placeholder="email@companie.ro" />
                 </div>
                 <div>
-                  <label className="block text-sm text-ash mb-2">Număr angajați *</label>
-                  <input type="number" required min="1" className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors" placeholder="ex: 20" />
+                  <label className="block text-sm text-white/70 mb-2">Număr angajați *</label>
+                  <input type="number" required min="1" className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-white focus:border-gold/40 focus:outline-none transition-colors" placeholder="ex: 20" />
                 </div>
                 <div>
-                  <label className="block text-sm text-ash mb-2">Perioada estimată *</label>
-                  <select required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors">
+                  <label className="block text-sm text-white/70 mb-2">Perioada estimată *</label>
+                  <select required className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-white focus:border-gold/40 focus:outline-none transition-colors">
                     <option value="" className="bg-ink">Selectează...</option>
                     <option value="1luna" className="bg-ink">1 lună</option>
                     <option value="3luni" className="bg-ink">3 luni</option>
@@ -508,17 +508,17 @@ export default function HomePage() {
                 </div>
               </div>
               <div>
-                <label className="block text-sm text-ash mb-2">Detalii suplimentare</label>
-                <textarea rows={4} className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-ink focus:border-gold/40 focus:outline-none transition-colors resize-none" placeholder="Cerințe specifice, data estimată de mutare, etc." />
+                <label className="block text-sm text-white/70 mb-2">Detalii suplimentare</label>
+                <textarea rows={4} className="w-full bg-white border border-gold/30 rounded-lg px-4 py-3 text-white focus:border-gold/40 focus:outline-none transition-colors resize-none" placeholder="Cerințe specifice, data estimată de mutare, etc." />
               </div>
               <div className="flex items-start gap-2">
                 <input type="checkbox" required id="gdpr-cazare" className="mt-1" />
-                <label htmlFor="gdpr-cazare" className="text-xs text-stone">
+                <label htmlFor="gdpr-cazare" className="text-xs text-white/70">
                   Sunt de acord cu prelucrarea datelor cu caracter personal conform{" "}
                   <Link href="/contact" className="text-gold hover:underline">politicii de confidențialitate</Link>.
                 </label>
               </div>
-              <button type="submit" className="w-full py-4 bg-gold text-ink font-semibold rounded-lg hover:bg-gold-light transition-colors flex items-center justify-center gap-2">
+              <button type="submit" className="w-full py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors flex items-center justify-center gap-2">
                 Trimite cererea <Send size={16} />
               </button>
             </motion.form>
@@ -529,7 +529,7 @@ export default function HomePage() {
       {/* ============================================ */}
       {/* CTA */}
       {/* ============================================ */}
-      <section className="py-32 px-6 bg-canvas">
+      <section className="py-32 px-6 bg-section-gradient">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -537,10 +537,10 @@ export default function HomePage() {
           transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-ink mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient mb-6">
             Ai întrebări? <span className="gold-text">Sună-ne</span>
           </h2>
-          <p className="text-lg text-ash mb-10">
+          <p className="text-lg text-white/70 mb-10">
             Echipa noastră îți răspunde la orice întrebare despre serviciile de cazare pentru angajați.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -553,7 +553,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-10 py-5 bg-gold text-ink font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300 text-lg"
+            className="inline-flex items-center gap-2 px-10 py-5 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300 text-lg"
           >
             Contactează-ne <ArrowRight size={20} />
           </Link>

@@ -9,7 +9,7 @@ export default function ContactPage() {
 
   return (
     <main className="pt-20">
-      <section className="py-20 px-6 bg-canvas">
+      <section className="py-20 px-6 bg-section-gradient">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Contact</span>
@@ -168,7 +168,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Locație BLS Homes"
+              title="Locație BLS HOMES"
             />
           </div>
         </div>

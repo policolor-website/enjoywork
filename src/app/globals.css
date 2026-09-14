@@ -6,9 +6,10 @@
   --color-surface: #f5f1e8;
   --color-wine: #722F37;
   --color-wine-light: #9B4446;
-  --color-gold: #c9a961;
-  --color-gold-light: #d4b876;
-  --color-gold-pale: #e0cd92;
+  --color-gold: #FF8C00;
+  --color-gold-light: #FFA940;
+  --color-gold-pale: #FEC610;
+  --color-gold-deep: #E67000;
   --color-cream: #1a2332;
   --color-bone: #2a3548;
   --color-ash: #5a6578;
@@ -70,40 +71,67 @@ html {
 }
 
 body {
-  background: var(--color-canvas);
-  color: var(--color-cream);
+  background: #000000;
+  color: #f5f1e8;
   font-family: var(--font-body);
   max-width: 100%;
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 169, 97, 0.25);
-  box-shadow: 0 8px 32px rgba(26, 35, 50, 0.08);
+  border: 1px solid rgba(254, 198, 16, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .glass:hover {
-  border-color: rgba(201, 169, 97, 0.5);
-  box-shadow: 0 8px 40px rgba(201, 169, 97, 0.12);
+  border-color: rgba(254, 198, 16, 0.5);
+  box-shadow: 0 8px 40px rgba(254, 198, 16, 0.15);
 }
 
 .glass-light {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 169, 97, 0.3);
-  box-shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
+  border: 1px solid rgba(254, 198, 16, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
 .gold-text {
-  background: linear-gradient(110deg, var(--color-gold) 25%, var(--color-gold-pale) 50%, var(--color-gold) 75%);
+  background: linear-gradient(110deg, #E67000 0%, #FF8C00 30%, #FEC610 50%, #FF8C00 70%, #E67000 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: var(--animate-shimmer);
+}
+
+/* Gradient title — orange to gold gradient */
+.title-gradient {
+  background: linear-gradient(135deg, #1a2332 0%, #E67000 40%, #FF8C00 70%, #FEC610 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* Section background gradients */
+.bg-hero-gradient {
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #141414 100%);
+}
+
+.bg-section-gradient {
+  background: linear-gradient(180deg, #0a0a0a 0%, #000000 50%, #141414 100%);
+}
+
+.bg-section-light {
+  background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
+}
+
+.bg-section-gold {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1500 50%, #0a0a0a 100%);
 }
 
 .hairline {

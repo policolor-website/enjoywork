@@ -329,12 +329,9 @@ export default function BuildingHero3D() {
         window.scrollTo(0, animRange());
         scrollProgress = 1.0;
       }
-      // Remove scroll-blocking listeners once hero is complete
-      if (scrollUnlocked && scrollY > animRange() + 100) {
-        window.removeEventListener("wheel", onWheel);
-        window.removeEventListener("touchmove", onTouchMove);
-        window.removeEventListener("touchstart", onTouchStart);
-        window.removeEventListener("scroll", onScroll);
+      // Reset unlock when scrolling back into hero
+      if (scrollUnlocked && scrollY < animRange() - 50) {
+        scrollUnlocked = false;
       }
     };
 
@@ -387,8 +384,8 @@ export default function BuildingHero3D() {
     // Update functions
     // ============================================
     function updateComponents() {
-      // Faster lerp near the end so building completes before scroll passes hero
-      const lerpSpeed = scrollProgress > 0.85 ? 0.25 : 0.12;
+      // Faster lerp near the end and on scroll-back so animation stays responsive
+      const lerpSpeed = scrollProgress > 0.85 ? 0.25 : (scrollProgress < smoothScrollProgress ? 0.2 : 0.12);
       smoothScrollProgress = lerp(smoothScrollProgress, scrollProgress, lerpSpeed);
 
       // Unlock scroll only when building is FULLY assembled (all pieces + final rotation)
@@ -465,7 +462,7 @@ export default function BuildingHero3D() {
     }
 
     // ============================================
-    // Animation loop — stops when hero is complete to free CPU/GPU
+    // Animation loop — keeps running to support scroll-back reverse
     // ============================================
     let animId = 0;
     let heroComplete = false;
@@ -474,13 +471,13 @@ export default function BuildingHero3D() {
       if (modelLoaded) {
         updateComponents();
         updateCamera();
-        // Stop rendering once hero is fully assembled and user scrolled past
+        // Mark hero complete but DON'T stop the loop — scroll-back needs animation
         if (!heroComplete && scrollUnlocked && smoothScrollProgress >= 0.999) {
           heroComplete = true;
-          // Final render then stop the loop
-          renderer.render(scene, camera);
-          cancelAnimationFrame(animId);
-          return;
+        }
+        // Reset heroComplete when scrolling back so animation resumes fully
+        if (heroComplete && smoothScrollProgress < 0.95) {
+          heroComplete = false;
         }
       }
       renderer.render(scene, camera);

@@ -3,8 +3,8 @@
 // ============================================
 
 export const brand = {
-  name: "BLS Homes",
-  legalName: "BLS Homes",
+  name: "BLS HOMES",
+  legalName: "BLS HOMES",
   tagline: "Cazare muncitori lângă București",
   description:
     "Soluție completă de relocare temporară a angajaților. Complex construit în 2026, cu 80 de locuri de cazare în 20 de camere modern utilate, în Domnești, Ilfov.",

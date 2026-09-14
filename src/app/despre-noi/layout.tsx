@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Despre noi — BLS Homes Cazare",
+  title: "Despre noi — BLS HOMES Cazare",
   description:
-    "BLS Homes oferă soluții de cazare pentru muncitori în Domnești, Ilfov. Complex construit în 2026, cu 80 de locuri în 20 de camere modern utilate.",
+    "BLS HOMES oferă soluții de cazare pentru muncitori în Domnești, Ilfov. Complex construit în 2026, cu 80 de locuri în 20 de camere modern utilate.",
 };
 
 export default function DespreNoiLayout({ children }: { children: React.ReactNode }) {

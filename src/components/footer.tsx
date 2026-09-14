@@ -9,9 +9,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <div className="flex flex-col leading-none mb-6">
-              <span className="font-display text-2xl font-bold text-canvas">{brand.name}</span>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-canvas/60 mt-1">{brand.tagline}</span>
+            <div className="flex items-center gap-3 mb-6">
+              <img
+                src="/logoblshome.png"
+                alt={brand.name}
+                className="h-16 sm:h-20 object-contain shrink-0"
+              />
+              <div className="flex flex-col leading-none">
+                <span className="font-display text-xl sm:text-2xl font-bold text-canvas">{brand.name}</span>
+                <span className="text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-canvas/60 mt-1">{brand.tagline}</span>
+              </div>
             </div>
             <p className="text-sm text-canvas/70 leading-relaxed mb-6">
               {brand.description}

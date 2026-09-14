@@ -16,7 +16,7 @@ const values = [
 export default function DespreNoiPage() {
   return (
     <main className="pt-20">
-      <section className="py-20 px-6 bg-canvas">
+      <section className="py-20 px-6 bg-section-gradient">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -41,7 +41,7 @@ export default function DespreNoiPage() {
             className="glass rounded-2xl p-8 mb-16"
           >
             <p className="text-ash leading-relaxed mb-4">
-              BLS Homes oferă soluția de relocare temporară a angajaților, punând la dispoziție un cămin nou, construit în 2026, localizat în Domnești, Ilfov.
+              BLS HOMES oferă soluția de relocare temporară a angajaților, punând la dispoziție un cămin nou, construit în 2026, localizat în Domnești, Ilfov.
             </p>
             <p className="text-ash leading-relaxed">
               Complexul dispune de 80 de locuri de cazare în 20 de camere modern utilate, cu acces facil la București și la toate facilitățile necesare angajaților tăi.

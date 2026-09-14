@@ -34,7 +34,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-canvas/95 backdrop-blur-md py-3 border-b border-gold/30"
+          ? "bg-black/90 backdrop-blur-md py-3 border-b border-gold/30"
           : "py-5 bg-transparent"
       }`}
     >
@@ -45,17 +45,17 @@ export default function Header() {
           className="flex items-center gap-3 group shrink-0"
         >
           <img
-            src="/enjoyresidence-logo.png"
+            src="/logoblshome.png"
             alt={brand.name}
-            className="w-10 h-10 sm:w-12 sm:h-12 object-contain shrink-0 rounded-full"
+            className="h-10 sm:h-12 object-contain shrink-0"
           />
           <div className="flex flex-col leading-none">
-            <span className="font-display text-xl sm:text-2xl font-bold text-ink tracking-tight whitespace-nowrap">
+            <span className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight whitespace-nowrap">
               {brand.name}
             </span>
             <span
               className={`text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] uppercase mt-0.5 transition-colors duration-300 whitespace-nowrap ${
-                scrolled ? "text-ash" : "text-ink/70"
+                scrolled ? "text-white/60" : "text-white/70"
               }`}
             >
               {brand.tagline}
@@ -73,7 +73,7 @@ export default function Header() {
                 pathname === item.href ||
                 (item.href !== "/" && pathname.startsWith(item.href))
                   ? "text-gold"
-                  : "text-ink/80 hover:text-gold"
+                  : "text-white/80 hover:text-gold"
               }`}
             >
               {item.label}
@@ -86,7 +86,7 @@ export default function Header() {
           <a
             href={`tel:${brand.phone.replace(/\s/g, "")}`}
             className={`flex items-center gap-2 text-sm transition-colors whitespace-nowrap ${
-              scrolled ? "text-ash hover:text-gold" : "text-ink/80 hover:text-gold"
+              scrolled ? "text-white/70 hover:text-gold" : "text-white/80 hover:text-gold"
             }`}
           >
             <Phone size={14} />
@@ -96,7 +96,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden w-10 h-10 shrink-0 rounded-lg flex items-center justify-center text-ink hover:text-gold transition-colors duration-300 ml-auto"
+          className="lg:hidden w-10 h-10 shrink-0 rounded-lg flex items-center justify-center text-white hover:text-gold transition-colors duration-300 ml-auto"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -105,13 +105,13 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-canvas/95 mt-3 mx-4 rounded-xl p-6 animate-fade-up border border-gold/30">
+        <div className="lg:hidden bg-black/95 mt-3 mx-4 rounded-xl p-6 animate-fade-up border border-gold/30">
           <nav className="flex flex-col gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-ink hover:text-gold text-base block py-2"
+                className="text-white hover:text-gold text-base block py-2"
               >
                 {item.label}
               </Link>
