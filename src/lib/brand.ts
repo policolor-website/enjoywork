@@ -12,7 +12,7 @@ export const brand = {
   agentPhone: "0785 598 779",
   email: "contact@blshomes.ro",
   agentEmail: "contact@blshomes.ro",
-  address: "Domnești, Ilfov",
+  address: "Strada Baboi 73, Domnești, Ilfov",
   workArea: "Domnești, Ilfov",
   website: "blshomes.ro",
   program: "Zilnic, 08:00 – 18:00",
