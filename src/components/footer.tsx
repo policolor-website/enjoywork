@@ -42,7 +42,7 @@ export default function Footer() {
           <div>
             <h4 className="font-display text-lg text-gold mb-5">Servicii</h4>
             <ul className="space-y-3">
-              <li><Link href="/#formular" className="text-sm text-canvas/70 hover:text-gold transition-colors">Solicită ofertă</Link></li>
+              <li><Link href="/contact" className="text-sm text-canvas/70 hover:text-gold transition-colors">Solicită ofertă</Link></li>
               <li><Link href="/dotari-facilitati" className="text-sm text-canvas/70 hover:text-gold transition-colors">Dotări camere</Link></li>
               <li><Link href="/dotari-facilitati" className="text-sm text-canvas/70 hover:text-gold transition-colors">Facilități complex</Link></li>
               <li><Link href="/galerie-foto" className="text-sm text-canvas/70 hover:text-gold transition-colors">Galerie foto</Link></li>

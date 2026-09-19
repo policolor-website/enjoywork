@@ -23,7 +23,7 @@ const iconMap: Record<string, any> = {
 };
 
 const dotareIcons: Record<string, any> = {
-  "Camere cu 2, 3 sau 4 paturi": BedDouble,
+  "Camere cu 2 sau 4 paturi": BedDouble,
   "Baie proprie în fiecare cameră": ShieldCheck,
   "Mobilier nou": Building2,
   "Spații de depozitare generoase": Shirt,
@@ -81,12 +81,12 @@ export default function HomePage() {
               Complex nou, construit în 2026, în Domnești, Ilfov. 80 de locuri de cazare în camere modern utilate.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto">
-              <a
-                href="#formular"
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
               >
                 Solicită ofertă <ArrowRight size={18} />
-              </a>
+              </Link>
               <a
                 href={`tel:${brand.phone.replace(/\s/g, "")}`}
                 className="inline-flex items-center gap-2 px-8 py-4 glass text-white font-semibold rounded-lg hover:border-gold/50 transition-all duration-300"

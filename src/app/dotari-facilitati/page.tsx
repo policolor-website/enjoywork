@@ -11,7 +11,7 @@ import {
 } from "@/lib/listings";
 
 const dotareIcons: Record<string, any> = {
-  "Camere cu 2, 3 sau 4 paturi": BedDouble,
+  "Camere cu 2 sau 4 paturi": BedDouble,
   "Baie proprie în fiecare cameră": Wind,
   "Mobilier nou": Building2,
   "Spații de depozitare generoase": Shirt,
@@ -116,7 +116,7 @@ export default function DotariFacilitatiPage() {
 
           <div className="text-center">
             <Link
-              href="/#formular"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
             >
               Solicită ofertă <ArrowRight size={18} />

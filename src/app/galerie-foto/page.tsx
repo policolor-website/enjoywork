@@ -51,7 +51,7 @@ export default function GalerieFotoPage() {
 
           <div className="text-center mt-16">
             <Link
-              href="/#formular"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
             >
               Solicită ofertă <ArrowRight size={18} />

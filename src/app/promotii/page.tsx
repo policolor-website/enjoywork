@@ -41,7 +41,7 @@ export default function PromotiiPage() {
               Dar ne poți solicita o ofertă personalizată, adaptată numărului de angajați și perioadei de cazare.
             </p>
             <Link
-              href="/#formular"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-light transition-colors duration-300"
             >
               Solicită ofertă <ArrowRight size={18} />

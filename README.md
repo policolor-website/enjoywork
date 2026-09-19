@@ -1,15 +1,15 @@
-# LUCA HOME CONSTRUCT
+# BLS HOMES
 
-Site de prezentare pentru **LUCA HOME CONSTRUCT** — constrcții profesionale case, acoperișuri și reparații. Zonă de lucru: România și Moldova.
+Site de prezentare pentru **BLS HOMES** — cazare pentru muncitori în Domnești, Ilfov, lângă București. Complex construit în 2026, cu 80 de locuri în 20 de camere modern utilate. Ofertă B2B pentru companii.
 
-## Servicii
+## Pagini
 
-- Construcții Case (la roșu, la gri, la cheie)
-- Instalații Electrice
-- Instalații Sanitare (apă-canal, termoficare, centrale termice)
-- Renovări / Amenajări
-- Drumuri și Poduri (asfaltări, parcări, platforme)
-- Închirieri Utilaje (buldo, bobcat, basculante, excavatoare, freze)
+- `/` — landing: hero 3D (living room cu asamblare la scroll), statistici, beneficii, dotări, locație, proces, galerie, FAQ, formular ofertă
+- `/despre-noi` — despre complex
+- `/promotii` — oferte pentru contracte de durată
+- `/dotari-facilitati` — dotări camere + facilități complex
+- `/galerie-foto` — galerie imagini
+- `/contact` — date contact + formular
 
 ## Tehnologii
 
@@ -17,21 +17,18 @@ Site de prezentare pentru **LUCA HOME CONSTRUCT** — constrcții profesionale c
 - React 19
 - Tailwind CSS v4
 - Framer Motion (animații)
-- Three.js (hero 3D — casă cu efect de asamblare/implozie la scroll)
+- Three.js (hero 3D `living-room.glb` + widget telefon `phone.glb`)
 
-## Model 3D Hero
+## Structură date
 
-Modelul `public/royal-house.glb` (2.4 MB, 931 bucăți) a fost exportat din `royal house 1.blend` (Blender) cu:
-- Separare loose parts (9 mesh-uri → 931 bucăți individuale)
-- Teren/plan șters
-- Rotație Y-up bakuită în geometrie
-- Compresie Draco + texturi WebP
+- `src/lib/brand.ts` — date companie (telefon, email, adresă, tagline)
+- `src/lib/listings.ts` — conținut: stats, beneficii, dotări, facilități, proces, FAQ, galerie
 
 ## Contact
 
-- **Telefon:** +373 60 191 817
-- **Facebook:** https://www.facebook.com/Lucahomeconstruct/
-- **Zonă de lucru:** România și Moldova
+- **Telefon:** 0785 598 779
+- **Email:** contact@blshomes.ro
+- **Adresă:** Strada Baboi 73, Domnești, Ilfov
 - **Program:** Zilnic, 08:00 – 18:00
 
 ## Dezvoltare
