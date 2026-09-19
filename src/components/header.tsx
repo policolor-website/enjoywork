@@ -46,7 +46,7 @@ export default function Header() {
         >
           <img
             src="/logoblshome.png"
-            alt={brand.name}
+            alt={`${brand.name} — camin cazare muncitori`}
             className="h-10 sm:h-12 object-contain shrink-0"
           />
           <div className="flex flex-col leading-none">

@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
+import FaqAccordion from "@/components/faq-accordion";
+import { promotiiFAQ } from "@/lib/listings";
+import { faqJsonLd } from "@/lib/seo";
 
 export default function PromotiiPage() {
   return (
@@ -20,7 +23,7 @@ export default function PromotiiPage() {
               <span className="gold-text">Promoții</span>
             </h1>
             <p className="text-lg text-white/70">
-              Beneficiază de prețurile noastre speciale pentru contracte de durată.
+              Beneficiază de prețurile speciale ale căminului nostru de cazare pentru muncitori, la contracte de durată.
             </p>
           </motion.div>
 
@@ -47,8 +50,27 @@ export default function PromotiiPage() {
               Solicită ofertă <ArrowRight size={18} />
             </Link>
           </motion.div>
+
+          <div className="mt-20">
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Întrebări frecvente</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold title-gradient">FAQ</h2>
+            </motion.div>
+            <FaqAccordion items={promotiiFAQ} />
+          </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(promotiiFAQ)) }}
+      />
     </main>
   );
 }

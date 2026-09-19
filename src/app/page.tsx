@@ -9,11 +9,13 @@ import {
   Clock, ChevronDown, ChevronUp, Car, Sparkles,
 } from "lucide-react";
 import BuildingHero3D from "@/components/building-hero-3d";
+import Slideshow from "@/components/slideshow";
 import { brand } from "@/lib/brand";
 import {
   cazareStats, cazareBeneficii, cazareDotari, cazareFacilitati,
   cazareProces, cazareFAQ, galerieCazare,
 } from "@/lib/listings";
+import { faqJsonLd } from "@/lib/seo";
 
 const iconMap: Record<string, any> = {
   building: Building2,
@@ -75,10 +77,10 @@ export default function HomePage() {
           >
             <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">BLS HOMES</span>
             <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 drop-shadow-2xl title-gradient">
-              Cazare pentru <span className="gold-text">muncitori</span>
+              Camin cazare <span className="gold-text">muncitori</span> lângă București
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8 drop-shadow-lg">
-              Complex nou, construit în 2026, în Domnești, Ilfov. 80 de locuri de cazare în camere modern utilate.
+              Camin nou de cazare pentru muncitori, construit în 2026 în Domnești, Ilfov. 80 de locuri în camere modern utilate.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto">
               <Link
@@ -190,55 +192,100 @@ export default function HomePage() {
             <h2 className="font-display text-4xl md:text-5xl font-bold title-gradient">Dotări și facilități</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
-              className="glass rounded-2xl p-8"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
-                  <BedDouble size={24} className="text-gold" />
-                </div>
-                <h3 className="font-display text-2xl font-bold text-white">Dotări camere</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {cazareDotari.map((d, i) => {
-                  const Icon = dotareIcons[d] || Check;
-                  return (
-                    <div key={i} className="flex items-start gap-2 text-sm text-white/70">
-                      <Icon size={16} className="text-gold mt-0.5 shrink-0" />
-                      <span>{d}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </motion.div>
+          <div className="space-y-8">
+            {/* Rând 1: imagine stânga + Dotări camere dreapta */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+                className="glass rounded-2xl p-4 sm:p-6 flex flex-col justify-center"
+              >
+                <img
+                  src="/caminmuncitori/camerablshomes.webp"
+                  alt="Plan unitate camin cazare muncitori BLS HOMES — 2 camere cu 4 paturi, 2 băi, hol și spațiu comun"
+                  className="w-full h-auto rounded-xl"
+                />
+                <p className="text-center text-xs text-white/60 mt-4">
+                  Plan unitate: 2 camere × 4 persoane, 2 băi, hol cu spațiu comun
+                </p>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
-              className="glass rounded-2xl p-8"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
-                  <Building2 size={24} className="text-gold" />
-                </div>
-                <h3 className="font-display text-2xl font-bold text-white">Facilități complex</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {cazareFacilitati.map((f, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-white/70">
-                    <Check size={16} className="text-gold mt-0.5 shrink-0" />
-                    <span>{f}</span>
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+                className="glass rounded-2xl p-8"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <BedDouble size={24} className="text-gold" />
                   </div>
-                ))}
-              </div>
-            </motion.div>
+                  <h3 className="font-display text-2xl font-bold text-white">Dotări camere</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {cazareDotari.map((d, i) => {
+                    const Icon = dotareIcons[d] || Check;
+                    return (
+                      <div key={i} className="flex items-start gap-2 text-sm text-white/70">
+                        <Icon size={16} className="text-gold mt-0.5 shrink-0" />
+                        <span>{d}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <Link
+                  href="/dotari-facilitati"
+                  className="inline-flex items-center gap-2 mt-6 text-sm text-gold hover:gap-3 transition-all"
+                >
+                  Vezi lista completă de dotări <ArrowRight size={14} />
+                </Link>
+                <Slideshow images={galerieCazare} />
+              </motion.div>
+            </div>
+
+            {/* Rând 2: Facilități complex stânga + imagine dreapta */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+                className="glass rounded-2xl p-8"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <Building2 size={24} className="text-gold" />
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-white">Facilități complex</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {cazareFacilitati.map((f, i) => (
+                    <div key={i} className="flex items-start gap-2 text-sm text-white/70">
+                      <Check size={16} className="text-gold mt-0.5 shrink-0" />
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <Slideshow images={galerieCazare} duration={25} />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+                className="glass rounded-2xl overflow-hidden flex items-center"
+              >
+                <img
+                  src="/caminmuncitori/5.webp"
+                  alt="Facilități comune camin cazare muncitori BLS HOMES — bucătării, spălătorie, parcare"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -299,7 +346,7 @@ export default function HomePage() {
               </div>
 
               <a
-                href="https://www.google.ro/maps/dir//Domnesti,+Ilfov"
+                href="https://www.google.com/maps/dir/?api=1&destination=Strada+Baboi+73%2C+Domne%C8%99ti%2C+Ilfov"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-8 text-gold hover:gap-3 transition-all"
@@ -317,14 +364,14 @@ export default function HomePage() {
               className="glass rounded-2xl overflow-hidden h-[400px]"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28531.786!2d25.846!3d44.398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1fe5!2sDomnești%2C%20Ilfov!5e0!3m2!1sro!2sro!4v1700000000000"
+                src="https://maps.google.com/maps?q=Strada%20Baboi%2073%2C%20Domne%C8%99ti%2C%20Ilfov&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Locație BLS HOMES — Domnești, Ilfov"
+                title="Locație BLS HOMES — camin cazare muncitori Domnești, Ilfov"
               />
             </motion.div>
           </div>
@@ -432,7 +479,7 @@ export default function HomePage() {
                 Domnești, Ilfov — <span className="gold-text">acces facil</span> la București
               </h2>
               <p className="text-lg text-white/70 leading-relaxed mb-6">
-                Complexul se află în Domnești, Ilfov — cu acces direct la transport public și legături rapide către București.
+                Căminul se află în Domnești, Ilfov — cu acces direct la transport public și legături rapide către București.
               </p>
               <ul className="grid grid-cols-2 gap-3 mb-8">
                 {[
@@ -444,8 +491,12 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
+              <p className="text-xs text-white/50 mb-8">
+                Zone deservite: Domnești, Țegheș, Bragadiru, Chiajna, Militari,
+                Ciorogârla, sectoarele 4, 5 și 6 București și zona A0.
+              </p>
               <a
-                href="https://www.google.ro/maps/dir//Domnesti,+Ilfov"
+                href="https://www.google.com/maps/dir/?api=1&destination=Strada+Baboi+73%2C+Domne%C8%99ti%2C+Ilfov"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-gold hover:gap-3 transition-all"
@@ -462,8 +513,8 @@ export default function HomePage() {
               className="rounded-2xl overflow-hidden glass"
             >
               <img
-                src="/belsamen/2.jpg"
-                alt="Locație cazare Domnești"
+                src="/caminmuncitori/2.jpg"
+                alt="Camin cazare muncitori BLS HOMES în Domnești, Ilfov"
                 className="w-full h-[400px] object-cover"
               />
             </motion.div>
@@ -516,6 +567,13 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
+
+          <p className="text-center mt-10 text-sm text-white/70">
+            Ai alte întrebări?{" "}
+            <Link href="/contact" className="text-gold hover:underline">
+              Contactează-ne
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -646,6 +704,11 @@ export default function HomePage() {
           </Link>
         </motion.div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(cazareFAQ)) }}
+      />
     </main>
   );
 }

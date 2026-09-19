@@ -4,12 +4,14 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Target, Users, Building2, Heart } from "lucide-react";
 import { brand } from "@/lib/brand";
-import { cazareStats } from "@/lib/listings";
+import { cazareStats, despreFAQ } from "@/lib/listings";
+import FaqAccordion from "@/components/faq-accordion";
+import { faqJsonLd } from "@/lib/seo";
 
 const values = [
   { icon: Target, title: "Misiunea noastră", text: "Să oferim companiilor o soluție completă de relocare a angajaților, cu standarde ridicate de confort, siguranță și eficiență." },
   { icon: Users, title: "Oamenii pe primul loc", text: "Calitatea cazării influențează direct productivitatea. De aceea investim în camere moderne, curate și complet utilate." },
-  { icon: Building2, title: "Infrastructură nouă", text: "Complex construit în 2026, proiectat pentru a găzdui 80 de persoane în 20 de camere, în condiții optime." },
+  { icon: Building2, title: "Infrastructură nouă", text: "Camin de cazare construit în 2026, proiectat pentru a găzdui 80 de persoane în 20 de camere, în condiții optime." },
   { icon: Heart, title: "Parteneriat de lungă durată", text: "Lucrăm cu companii care au strategii de fidelizare a forței de muncă. Oferim contracte flexibile și suport administrativ continuu." },
 ];
 
@@ -29,7 +31,7 @@ export default function DespreNoiPage() {
               Câteva cuvinte pentru a ne <span className="gold-text">cunoaște</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
-              Criza forței de muncă din România ne-a convins că oamenii sunt cea mai importantă resursă a companiilor. De aceea am construit un spațiu de cazare modern pentru angajații veniți de peste hotare, dar și din țară, oferind camere spațioase, complet utilate, care asigură un nivel ridicat de confort.
+              Criza forței de muncă din România ne-a convins că oamenii sunt cea mai importantă resursă a companiilor. De aceea am construit un camin de cazare modern pentru muncitorii și angajații veniți de peste hotare, dar și din țară, oferind camere spațioase, complet utilate, care asigură un nivel ridicat de confort.
             </p>
           </motion.div>
 
@@ -44,7 +46,7 @@ export default function DespreNoiPage() {
               BLS HOMES oferă soluția de relocare temporară a angajaților, punând la dispoziție un cămin nou, construit în 2026, localizat în Domnești, Ilfov.
             </p>
             <p className="text-white/70 leading-relaxed">
-              Complexul dispune de 80 de locuri de cazare în 20 de camere modern utilate, cu acces facil la București și la toate facilitățile necesare angajaților tăi.
+              Căminul dispune de 80 de locuri de cazare în 20 de camere modern utilate, cu acces facil la București și la toate facilitățile necesare angajaților tăi.
             </p>
           </motion.div>
 
@@ -86,6 +88,20 @@ export default function DespreNoiPage() {
             })}
           </div>
 
+          <div className="mb-16 max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Întrebări frecvente</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold title-gradient">FAQ</h2>
+            </motion.div>
+            <FaqAccordion items={despreFAQ} />
+          </div>
+
           <div className="text-center">
             <Link
               href="/contact"
@@ -96,6 +112,11 @@ export default function DespreNoiPage() {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(despreFAQ)) }}
+      />
     </main>
   );
 }

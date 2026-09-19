@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <img
                 src="/logoblshome.png"
-                alt={brand.name}
+                alt={`${brand.name} — camin cazare muncitori`}
                 className="h-16 sm:h-20 object-contain shrink-0"
               />
               <div className="flex flex-col leading-none">
@@ -22,6 +22,17 @@ export default function Footer() {
             </div>
             <p className="text-sm text-canvas/70 leading-relaxed mb-6">
               {brand.description}
+            </p>
+            <p className="text-xs text-canvas/50">
+              Partener:{" "}
+              <a
+                href={brand.partnerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-canvas/70 hover:text-gold transition-colors"
+              >
+                {brand.partner}
+              </a>
             </p>
           </div>
 

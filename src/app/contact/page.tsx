@@ -3,6 +3,9 @@
 import { Phone, Mail, MapPin, Clock, Send, Building2, Users } from "lucide-react";
 import { useState } from "react";
 import { brand } from "@/lib/brand";
+import FaqAccordion from "@/components/faq-accordion";
+import { contactFAQ } from "@/lib/listings";
+import { faqJsonLd } from "@/lib/seo";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -17,7 +20,7 @@ export default function ContactPage() {
               Contactează-<span className="gold-text">ne</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              Pentru orice informație despre serviciile noastre de cazare pentru muncitori, nu ezita să ne contactezi.
+              Pentru orice informație despre căminul nostru de cazare pentru muncitori din Domnești, Ilfov, nu ezita să ne contactezi.
             </p>
           </div>
 
@@ -161,18 +164,32 @@ export default function ContactPage() {
           {/* Hartă */}
           <div className="glass rounded-2xl overflow-hidden">
             <iframe
-              src="https://www.google.com/maps?q=Domnesti+Ilfov&output=embed"
+              src="https://maps.google.com/maps?q=Strada%20Baboi%2073%2C%20Domne%C8%99ti%2C%20Ilfov&t=&z=14&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Locație BLS HOMES"
+              title="Locație BLS HOMES — camin cazare muncitori Domnești, Ilfov"
             />
+          </div>
+
+          {/* FAQ */}
+          <div className="mt-20 max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Întrebări frecvente</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold title-gradient">FAQ</h2>
+            </div>
+            <FaqAccordion items={contactFAQ} />
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(contactFAQ)) }}
+      />
     </main>
   );
 }

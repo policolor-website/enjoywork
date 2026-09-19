@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { galerieCazare } from "@/lib/listings";
+import { galerieCazare, galerieFAQ } from "@/lib/listings";
+import FaqAccordion from "@/components/faq-accordion";
+import { faqJsonLd } from "@/lib/seo";
 
 export default function GalerieFotoPage() {
   return (
@@ -16,12 +18,12 @@ export default function GalerieFotoPage() {
             transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
             className="text-center mb-16"
           >
-            <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Imagini complex</span>
+            <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Imagini cămin</span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
               Galerie <span className="gold-text">foto</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              Imagini ale unității noastre de cazare — camere, zone comune și facilități.
+              Imagini ale căminului nostru de cazare pentru muncitori — camere, zone comune și facilități.
             </p>
           </motion.div>
 
@@ -49,6 +51,20 @@ export default function GalerieFotoPage() {
             ))}
           </div>
 
+          <div className="mt-20 mb-16 max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <span className="text-xs tracking-[0.3em] uppercase text-gold mb-4 block">Întrebări frecvente</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold title-gradient">FAQ</h2>
+            </motion.div>
+            <FaqAccordion items={galerieFAQ} />
+          </div>
+
           <div className="text-center mt-16">
             <Link
               href="/contact"
@@ -59,6 +75,11 @@ export default function GalerieFotoPage() {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(galerieFAQ)) }}
+      />
     </main>
   );
 }
