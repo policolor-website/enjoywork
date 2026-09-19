@@ -47,7 +47,7 @@ export default function ContactPage() {
                       <p className="text-sm text-white/70">{brand.address}</p>
                       <p className="text-sm text-gold mt-1">{brand.workArea}</p>
                       <a
-                        href="https://www.google.ro/maps/dir//Domnesti,+Ilfov"
+                        href="https://www.google.com/maps/dir/?api=1&destination=44.3989,25.927584"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs text-gold hover:underline mt-2 inline-block"
@@ -164,7 +164,7 @@ export default function ContactPage() {
           {/* Hartă */}
           <div className="glass rounded-2xl overflow-hidden">
             <iframe
-              src="https://maps.google.com/maps?q=Strada%20Baboi%2073%2C%20Domne%C8%99ti%2C%20Ilfov&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=44.3989,25.927584&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}

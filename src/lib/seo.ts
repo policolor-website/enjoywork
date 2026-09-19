@@ -48,12 +48,10 @@ export function lodgingBusinessJsonLd() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 44.3992,
-      longitude: 25.9162,
+      latitude: 44.3989,
+      longitude: 25.927584,
     },
-    hasMap:
-      "https://www.google.com/maps/search/?api=1&query=" +
-      encodeURIComponent("Strada Baboi 73, Domnești, Ilfov"),
+    hasMap: "https://www.google.com/maps/search/?api=1&query=44.3989,25.927584",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [

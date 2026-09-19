@@ -346,7 +346,7 @@ export default function HomePage() {
               </div>
 
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=Strada+Baboi+73%2C+Domne%C8%99ti%2C+Ilfov"
+                href="https://www.google.com/maps/dir/?api=1&destination=44.3989,25.927584"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-8 text-gold hover:gap-3 transition-all"
@@ -364,7 +364,7 @@ export default function HomePage() {
               className="glass rounded-2xl overflow-hidden h-[400px]"
             >
               <iframe
-                src="https://maps.google.com/maps?q=Strada%20Baboi%2073%2C%20Domne%C8%99ti%2C%20Ilfov&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=44.3989,25.927584&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -496,7 +496,7 @@ export default function HomePage() {
                 Ciorogârla, sectoarele 4, 5 și 6 București și zona A0.
               </p>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=Strada+Baboi+73%2C+Domne%C8%99ti%2C+Ilfov"
+                href="https://www.google.com/maps/dir/?api=1&destination=44.3989,25.927584"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-gold hover:gap-3 transition-all"

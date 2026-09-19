@@ -155,7 +155,7 @@ Google.ro tratează „camin", „cazare", „dormitor", „hostel muncitori" ca
 - [x] **Faza 1 implementată** (sept 2026): metadataBase + canonical, sitemap.xml, robots.txt, JSON-LD LodgingBusiness + WebSite + FAQPage + BreadcrumbList, OG/Twitter cards, metadata pe toate paginile (inclusiv layout nou pentru /contact)
 - [x] **Faza 2 implementată**: H1 „Camin cazare muncitori lângă București", integrare „camin/cămin" în copy, alt-uri cu keywords, zone deservite, link intern FAQ→Contact, hartă Google Maps cu adresa exactă
 - [ ] Înlocuire imagini `public/caminmuncitori/` cu poze reale ale complexului + OG image nou (momentan placeholder `caminmuncitori/4.jpg`)
-- [ ] Coordonatele exacte pentru Strada Baboi 73 (acum: centrul comunei 44.3992, 25.9162)
+- [x] Coordonatele exacte pentru Strada Baboi 73 (44.3989, 25.927584 — confirmate din Google Maps)
 - [ ] Pagină Facebook? → completat `brand.social.facebook` + `sameAs` în JSON-LD
 - [ ] Verificat că emailul `contact@blshomes.ro` rămâne valid sau migrat pe domeniul nou
 - [ ] Faza 3 — manuală, de către client: Google Business Profile, directoare (anuntul.ro, publi24, olx), Search Console + submit sitemap
